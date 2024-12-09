@@ -1,0 +1,59 @@
+{
+  "name": "reccegroup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "http-commons": "^1.2.0",
+    "nodemon": "^3.1.7",
+    "react-scripts": "5.0.1",
+    "ts-node": "^10.9.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "mockserver": "nodemon server.js",
+    "build": "react-scripts build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "jest": "^29.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3"
+  }
+}
