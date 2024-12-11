@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent} from 'react'
+import React, { useState, ChangeEvent, useEffect} from 'react'
 import { useTrips, TripSet } from '../context/tripDetailsContext'
 import { sortByDate } from '../utils/dateUtil'
 import { TripItem } from './tripItem'
@@ -8,10 +8,14 @@ export const IMAGE_WIDTH_SIZE = "264";
 
 export const TripDetails = () => {
 	const { state } = useTrips()
-	const [trips, setTrips] = useState<Array<TripSet>>(sortByDate(state.trips?.tripSet) as unknown as TripSet[])
+	const [trips, setTrips] = useState<Array<TripSet>>([])
   const [filteredTrips, setFilteredTrips] = useState<Array<TripSet>>([])
   const [isChecked, setIsChecked] = useState(true)
   const [filterValue, setFilterValue] = useState("")
+
+  useEffect(() => {
+    setTrips((state.trips?.tripSet) as unknown as TripSet[])
+  }, [state.trips?.tripSet])
 
 	const ToggleDates = () => {
     const checkHandler = () => {
@@ -97,7 +101,7 @@ export const TripDetails = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {filteredTrips.length > 1
+          {filteredTrips && filteredTrips.length > 1
             ? filteredTrips.map((trip, index) => (
                 <React.Fragment key={index}>
                   <TripItem
