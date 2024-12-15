@@ -20,7 +20,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "outDir": "./dist",
-    "types": ["jest", "node"],
+    "types": ["jest", "@testing-library/react"],
   },
   "include": [
     "src"
